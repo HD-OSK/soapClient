@@ -1,0 +1,45 @@
+# Staging & Product ??
+# spring.profiles.active: ???? ??
+spring:
+  profiles:
+    active: ${profiles.active}
+
+---
+spring.config.activate.on-profile: prod
+service:
+  uri:
+    z_bapi_ar_acc_getopenitems: http://vhhdkqs4ci.sap.handok.co.kr:8000/sap/bc/srt/rfc/sap/z_bapi_ar_acc_getopenitems/100/z_bapi_ar_acc_getopenitems/z_bapi_ar_acc_getopenitems
+    z_bapi_salesorder_simulate: http://vhhdkqs4ci.sap.handok.co.kr:8000/sap/bc/srt/rfc/sap/z_bapi_salesorder_simulate/100/z_bapi_salesorder_simulate/z_bapi_salesorder_simulate
+    zfi_credit_detail: http://vhhdkqs4ci.sap.handok.co.kr:8000/sap/bc/srt/rfc/sap/zfi_credit_detail/100/zfi_credit_detail/zfi_credit_detail
+    zmm_batch_stock_ws3: http://vhhdkqs4ci.sap.handok.co.kr:8000/sap/bc/srt/rfc/sap/zmm_batch_stock_ws3/100/zmm_batch_stock_ws3/zmm_batch_stock_ws3
+    zmm_change_mb22_mbd_2_ws: http://vhhdkqs4ci.sap.handok.co.kr:8000/sap/bc/srt/rfc/sap/zmm_change_mb22_mbd_2_ws/100/zmm_change_mb22_mbd_2_ws/zmm_change_mb22_mbd_2_ws
+    zmm_change_mb22_mbd_ws: http://vhhdkqs4ci.sap.handok.co.kr:8000/sap/bc/srt/rfc/sap/zmm_change_mb22_mbd_ws/100/zmm_change_mb22_mbd_ws/zmm_change_mb22_mbd_ws
+    zmm_create_mb21_mbd_ws: http://vhhdkqs4ci.sap.handok.co.kr:8000/sap/bc/srt/rfc/sap/zmm_create_mb21_mbd_ws/100/zmm_create_mb21_mbd_ws/zmm_create_mb21_mbd_ws
+    zmm_display_mb25_mbd_ws: http://vhhdkqs4ci.sap.handok.co.kr:8000/sap/bc/srt/rfc/sap/zmm_display_mb25_mbd_ws/100/zmm_display_mb25_mbd_ws/zmm_display_mb25_mbd_ws
+    zmm_display_mb58_ws: http://vhhdkqs4ci.sap.handok.co.kr:8000/sap/bc/srt/rfc/sap/zmm_display_mb58_ws/100/zmm_display_mb58_ws/zmm_display_mb58_ws
+    zsd_cust_return_create_ws: http://vhhdkqs4ci.sap.handok.co.kr:8000/sap/bc/srt/rfc/sap/zsd_cust_return_create_ws/100/zsd_cust_return_create_ws/zsd_cust_return_create_ws
+    zsd_delivery_note_so: http://vhhdkqs4ci.sap.handok.co.kr:8000/sap/bc/srt/rfc/sap/zsd_delivery_note_so/100/zsd_delivery_note_so/zsd_delivery_note_so
+    zsd_so_createfromdat2_ws: http://vhhdkqs4ci.sap.handok.co.kr:8000/sap/bc/srt/rfc/sap/zsd_so_createfromdat2_ws/100/zsd_so_createfromdat2_ws/zsd_so_createfromdat2_ws
+    zsd_so_createfromdat3_ws: http://vhhdkqs4ci.sap.handok.co.kr:8000/sap/bc/srt/rfc/sap/zsd_so_createfromdat3_ws/100/zsd_so_createfromdat3_ws/zsd_so_createfromdat3_ws
+    zsd_ws_delivery_update_ws: http://vhhdkqs4ci.sap.handok.co.kr:8000/sap/bc/srt/rfc/sap/zsd_ws_delivery_update_ws/100/zsd_ws_delivery_update_ws/zsd_ws_delivery_update_ws
+    zfi_search_customer_ws: http://vhhdkqs4ci.sap.handok.co.kr:8000/sap/bc/srt/rfc/sap/zfi_search_customer_ws/100/zfi_search_customer_ws/zfi_search_customer_ws
+
+---
+spring.config.activate.on-profile: dev
+service:
+  uri:
+    z_bapi_ar_acc_getopenitems: http://vhhdkqs4ci.sap.handok.co.kr:8000/sap/bc/srt/rfc/sap/z_bapi_ar_acc_getopenitems/100/z_bapi_ar_acc_getopenitems/z_bapi_ar_acc_getopenitems
+    z_bapi_salesorder_simulate: http://vhhdkqs4ci.sap.handok.co.kr:8000/sap/bc/srt/rfc/sap/z_bapi_salesorder_simulate/100/z_bapi_salesorder_simulate/z_bapi_salesorder_simulate
+    zfi_credit_detail: http://vhhdkqs4ci.sap.handok.co.kr:8000/sap/bc/srt/rfc/sap/zfi_credit_detail/100/zfi_credit_detail/zfi_credit_detail
+    zmm_batch_stock_ws3: http://vhhdkqs4ci.sap.handok.co.kr:8000/sap/bc/srt/rfc/sap/zmm_batch_stock_ws3/100/zmm_batch_stock_ws3/zmm_batch_stock_ws3
+    zmm_change_mb22_mbd_2_ws: http://vhhdkqs4ci.sap.handok.co.kr:8000/sap/bc/srt/rfc/sap/zmm_change_mb22_mbd_2_ws/100/zmm_change_mb22_mbd_2_ws/zmm_change_mb22_mbd_2_ws
+    zmm_change_mb22_mbd_ws: http://vhhdkqs4ci.sap.handok.co.kr:8000/sap/bc/srt/rfc/sap/zmm_change_mb22_mbd_ws/100/zmm_change_mb22_mbd_ws/zmm_change_mb22_mbd_ws
+    zmm_create_mb21_mbd_ws: http://vhhdkqs4ci.sap.handok.co.kr:8000/sap/bc/srt/rfc/sap/zmm_create_mb21_mbd_ws/100/zmm_create_mb21_mbd_ws/zmm_create_mb21_mbd_ws
+    zmm_display_mb25_mbd_ws: http://vhhdkqs4ci.sap.handok.co.kr:8000/sap/bc/srt/rfc/sap/zmm_display_mb25_mbd_ws/100/zmm_display_mb25_mbd_ws/zmm_display_mb25_mbd_ws
+    zmm_display_mb58_ws: http://vhhdkqs4ci.sap.handok.co.kr:8000/sap/bc/srt/rfc/sap/zmm_display_mb58_ws/100/zmm_display_mb58_ws/zmm_display_mb58_ws
+    zsd_cust_return_create_ws: http://vhhdkqs4ci.sap.handok.co.kr:8000/sap/bc/srt/rfc/sap/zsd_cust_return_create_ws/100/zsd_cust_return_create_ws/zsd_cust_return_create_ws
+    zsd_delivery_note_so: http://vhhdkqs4ci.sap.handok.co.kr:8000/sap/bc/srt/rfc/sap/zsd_delivery_note_so/100/zsd_delivery_note_so/zsd_delivery_note_so
+    zsd_so_createfromdat2_ws: http://vhhdkqs4ci.sap.handok.co.kr:8000/sap/bc/srt/rfc/sap/zsd_so_createfromdat2_ws/100/zsd_so_createfromdat2_ws/zsd_so_createfromdat2_ws
+    zsd_so_createfromdat3_ws: http://vhhdkqs4ci.sap.handok.co.kr:8000/sap/bc/srt/rfc/sap/zsd_so_createfromdat3_ws/100/zsd_so_createfromdat3_ws/zsd_so_createfromdat3_ws
+    zsd_ws_delivery_update_ws: http://vhhdkqs4ci.sap.handok.co.kr:8000/sap/bc/srt/rfc/sap/zsd_ws_delivery_update_ws/100/zsd_ws_delivery_update_ws/zsd_ws_delivery_update_ws
+    zfi_search_customer_ws: http://vhhdkqs4ci.sap.handok.co.kr:8000/sap/bc/srt/rfc/sap/zfi_search_customer_ws/100/zfi_search_customer_ws/zfi_search_customer_ws

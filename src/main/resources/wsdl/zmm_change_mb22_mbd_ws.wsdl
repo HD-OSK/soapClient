@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions targetNamespace="urn:sap-com:document:sap:soap:functions:mc-style"
+                  xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+                  xmlns:wsoap12="http://schemas.xmlsoap.org/wsdl/soap12/"
+                  xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/"
+                  xmlns:tns="urn:sap-com:document:sap:soap:functions:mc-style"
+                  xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"
+                  xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+                  xmlns:n1="urn:sap-com:document:sap:rfc:functions">
+    <wsdl:documentation>
+        <sidl:sidl xmlns:sidl="http://www.sap.com/2007/03/sidl"/>
+    </wsdl:documentation>
+    <wsp:UsingPolicy wsdl:required="true"/>
+    <wsp:Policy wsu:Id="BN__ZMM_CHANGE_MB22_MBD_WS">
+        <wsp:ExactlyOne>
+            <wsp:All>
+                <sapattahnd:Enabled xmlns:sapattahnd="http://www.sap.com/710/features/attachment/">false
+                </sapattahnd:Enabled>
+                <saptrnbnd:OptimizedMimeSerialization
+                        xmlns:saptrnbnd="http://schemas.xmlsoap.org/ws/2004/09/policy/optimizedmimeserialization"
+                        wsp:Optional="true"/>
+                <wsaw:UsingAddressing xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" wsp:Optional="true"/>
+            </wsp:All>
+            <wsp:All>
+                <sapattahnd:Enabled xmlns:sapattahnd="http://www.sap.com/710/features/attachment/">false
+                </sapattahnd:Enabled>
+                <saptrnbnd:OptimizedXMLTransfer uri="http://xml.sap.com/2006/11/esi/esp/binxml"
+                                                xmlns:saptrnbnd="http://www.sap.com/webas/710/soap/features/transportbinding/"
+                                                wsp:Optional="true"/>
+                <wsaw:UsingAddressing xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" wsp:Optional="true"/>
+            </wsp:All>
+        </wsp:ExactlyOne>
+    </wsp:Policy>
+    <wsp:Policy wsu:Id="BN__ZMM_CHANGE_MB22_MBD_WS_soap12">
+        <wsp:ExactlyOne>
+            <wsp:All>
+                <sapattahnd:Enabled xmlns:sapattahnd="http://www.sap.com/710/features/attachment/">false
+                </sapattahnd:Enabled>
+                <saptrnbnd:OptimizedMimeSerialization
+                        xmlns:saptrnbnd="http://schemas.xmlsoap.org/ws/2004/09/policy/optimizedmimeserialization"
+                        wsp:Optional="true"/>
+                <wsaw:UsingAddressing xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" wsp:Optional="true"/>
+            </wsp:All>
+            <wsp:All>
+                <sapattahnd:Enabled xmlns:sapattahnd="http://www.sap.com/710/features/attachment/">false
+                </sapattahnd:Enabled>
+                <saptrnbnd:OptimizedXMLTransfer uri="http://xml.sap.com/2006/11/esi/esp/binxml"
+                                                xmlns:saptrnbnd="http://www.sap.com/webas/710/soap/features/transportbinding/"
+                                                wsp:Optional="true"/>
+                <wsaw:UsingAddressing xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" wsp:Optional="true"/>
+            </wsp:All>
+        </wsp:ExactlyOne>
+    </wsp:Policy>
+    <wsp:Policy wsu:Id="IF__ZMM_CHANGE_MB22_MBD_WS">
+        <wsp:ExactlyOne>
+            <wsp:All>
+                <sapsession:Session xmlns:sapsession="http://www.sap.com/webas/630/soap/features/session/">
+                    <sapsession:enableSession>false</sapsession:enableSession>
+                </sapsession:Session>
+                <sapcentraladmin:CentralAdministration
+                        xmlns:sapcentraladmin="http://www.sap.com/webas/700/soap/features/CentralAdministration/"
+                        wsp:Optional="true">
+                    <sapcentraladmin:BusinessApplicationID>0022486C65F91EEDB9919407D04201A4
+                    </sapcentraladmin:BusinessApplicationID>
+                </sapcentraladmin:CentralAdministration>
+            </wsp:All>
+        </wsp:ExactlyOne>
+    </wsp:Policy>
+    <wsp:Policy wsu:Id="OP__ZmmChangeMb22Mbd">
+        <wsp:ExactlyOne>
+            <wsp:All>
+                <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no
+                </saptrhnw05:required>
+                <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false
+                </sapcomhnd:enableCommit>
+                <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true
+                </sapblock:enableBlocking>
+                <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false
+                </saprmnw05:enableWSRM>
+            </wsp:All>
+        </wsp:ExactlyOne>
+    </wsp:Policy>
+    <wsdl:types>
+        <xsd:schema attributeFormDefault="qualified" targetNamespace="urn:sap-com:document:sap:rfc:functions"
+                    xmlns:tns="urn:sap-com:document:sap:rfc:functions">
+            <xsd:simpleType name="char1">
+                <xsd:restriction base="xsd:string">
+                    <xsd:maxLength value="1"/>
+                </xsd:restriction>
+            </xsd:simpleType>
+            <xsd:simpleType name="char10">
+                <xsd:restriction base="xsd:string">
+                    <xsd:maxLength value="10"/>
+                </xsd:restriction>
+            </xsd:simpleType>
+            <xsd:simpleType name="char12">
+                <xsd:restriction base="xsd:string">
+                    <xsd:maxLength value="12"/>
+                </xsd:restriction>
+            </xsd:simpleType>
+            <xsd:simpleType name="char200">
+                <xsd:restriction base="xsd:string">
+                    <xsd:maxLength value="200"/>
+                </xsd:restriction>
+            </xsd:simpleType>
+            <xsd:simpleType name="char4">
+                <xsd:restriction base="xsd:string">
+                    <xsd:maxLength value="4"/>
+                </xsd:restriction>
+            </xsd:simpleType>
+            <xsd:simpleType name="numeric10">
+                <xsd:restriction base="xsd:string">
+                    <xsd:maxLength value="10"/>
+                    <xsd:pattern value="\d*"/>
+                </xsd:restriction>
+            </xsd:simpleType>
+            <xsd:simpleType name="numeric4">
+                <xsd:restriction base="xsd:string">
+                    <xsd:maxLength value="4"/>
+                    <xsd:pattern value="\d*"/>
+                </xsd:restriction>
+            </xsd:simpleType>
+            <xsd:simpleType name="quantum13.3">
+                <xsd:restriction base="xsd:decimal">
+                    <xsd:totalDigits value="13"/>
+                    <xsd:fractionDigits value="3"/>
+                </xsd:restriction>
+            </xsd:simpleType>
+        </xsd:schema>
+        <xsd:schema attributeFormDefault="qualified" targetNamespace="urn:sap-com:document:sap:soap:functions:mc-style"
+                    xmlns:n0="urn:sap-com:document:sap:rfc:functions">
+            <xsd:import namespace="urn:sap-com:document:sap:rfc:functions"/>
+            <xsd:complexType name="Zsmm024">
+                <xsd:sequence>
+                    <xsd:element name="Rspos" type="n0:numeric4"/>
+                    <xsd:element name="Charg" type="n0:char10"/>
+                    <xsd:element name="Lgort" type="n0:char4"/>
+                    <xsd:element name="Bdmng" type="n0:quantum13.3"/>
+                    <xsd:element name="Wempf" type="n0:char12"/>
+                    <xsd:element name="Xloek" type="n0:char1"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="TableOfZsmm024">
+                <xsd:sequence>
+                    <xsd:element name="item" type="tns:Zsmm024" minOccurs="0" maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:element name="ZmmChangeMb22Mbd">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="IRsnum" type="n0:numeric10"/>
+                        <xsd:element name="ITable" type="tns:TableOfZsmm024"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="ZmmChangeMb22MbdResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="EMessage" type="n0:char200"/>
+                        <xsd:element name="EResult" type="n0:char1"/>
+                        <xsd:element name="ITable" type="tns:TableOfZsmm024"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+        </xsd:schema>
+    </wsdl:types>
+    <wsdl:message name="ZmmChangeMb22Mbd">
+        <wsdl:part name="parameters" element="tns:ZmmChangeMb22Mbd"/>
+    </wsdl:message>
+    <wsdl:message name="ZmmChangeMb22MbdResponse">
+        <wsdl:part name="parameter" element="tns:ZmmChangeMb22MbdResponse"/>
+    </wsdl:message>
+    <wsdl:portType name="ZMM_CHANGE_MB22_MBD_WS">
+        <wsp:Policy>
+            <wsp:PolicyReference URI="#IF__ZMM_CHANGE_MB22_MBD_WS"/>
+        </wsp:Policy>
+        <wsdl:operation name="ZmmChangeMb22Mbd">
+            <wsp:Policy>
+                <wsp:PolicyReference URI="#OP__ZmmChangeMb22Mbd"/>
+            </wsp:Policy>
+            <wsdl:input message="tns:ZmmChangeMb22Mbd"/>
+            <wsdl:output message="tns:ZmmChangeMb22MbdResponse"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="ZMM_CHANGE_MB22_MBD_WS" type="tns:ZMM_CHANGE_MB22_MBD_WS">
+        <wsp:Policy>
+            <wsp:PolicyReference URI="#BN__ZMM_CHANGE_MB22_MBD_WS"/>
+        </wsp:Policy>
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <wsdl:operation name="ZmmChangeMb22Mbd">
+            <soap:operation
+                    soapAction="urn:sap-com:document:sap:soap:functions:mc-style:ZMM_CHANGE_MB22_MBD_WS:ZmmChangeMb22MbdRequest"
+                    style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="ZMM_CHANGE_MB22_MBD_WS_soap12" type="tns:ZMM_CHANGE_MB22_MBD_WS">
+        <wsp:Policy>
+            <wsp:PolicyReference URI="#BN__ZMM_CHANGE_MB22_MBD_WS_soap12"/>
+        </wsp:Policy>
+        <wsoap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <wsdl:operation name="ZmmChangeMb22Mbd">
+            <wsoap12:operation
+                    soapAction="urn:sap-com:document:sap:soap:functions:mc-style:ZMM_CHANGE_MB22_MBD_WS:ZmmChangeMb22MbdRequest"
+                    style="document"/>
+            <wsdl:input>
+                <wsoap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <wsoap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="ZMM_CHANGE_MB22_MBD_WS">
+        <wsdl:port name="ZMM_CHANGE_MB22_MBD_WS" binding="tns:ZMM_CHANGE_MB22_MBD_WS">
+            <soap:address
+                    location="http://vhhdkqs4ci.sap.handok.co.kr:8000/sap/bc/srt/rfc/sap/zmm_change_mb22_mbd_ws/100/zmm_change_mb22_mbd_ws/zmm_change_mb22_mbd_ws"/>
+        </wsdl:port>
+        <wsdl:port name="ZMM_CHANGE_MB22_MBD_WS_soap12" binding="tns:ZMM_CHANGE_MB22_MBD_WS_soap12">
+            <wsoap12:address
+                    location="http://vhhdkqs4ci.sap.handok.co.kr:8000/sap/bc/srt/rfc/sap/zmm_change_mb22_mbd_ws/100/zmm_change_mb22_mbd_ws/zmm_change_mb22_mbd_ws"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>
